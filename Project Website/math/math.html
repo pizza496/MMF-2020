@@ -17,15 +17,26 @@
                 </button>
                 <div class="dropdown-content">
                     <a href="../examples/example1.html">Example 1</a>
-                    <a href="../index.html">Example 2 (not created yet)</a>
-                    <a href="../index.html">Example 3 (not created yet)</a>
+                    <a href="../examples/example2.html">Example 2</a>
+                    <a href="../examples/example3.html">Example 3</a>
                 </div>
             </div>
         </div>
         <div class="main">
-            <h1>The Math Behind</h1>
+            <h1>The Math Behind The Animations</h1>
+            <h3>What are these animations really?</h3>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Each of these animations is a set of rotating vectors which, as time progresses, will draw an image.
+            </p>
+            <h3>How do these vectors work?</h3>
+            <p>
+                Mathematically, each of these vectors is written in the form \( ce^{ti} \) where \( c \) is a complex number, and \(t\) is a variable for time. With this form, as time goes from \(0\) to \( 2\pi \) the vector will trace one complete circle.
+            </p>
+            <h3>
+                Why is this a vector?
+            </h3>
+            <p>
+                Within the strictest technicalities, this isn't a vector, it is a complex number, but complex numbers can be represented as vectors when plotted on the complex plane. Since complex numbers are in the form \(Re + Im \cdot i \) they can be plotted on a graph with real and imaginary axis. 
             </p>
         </div>
     </body>
