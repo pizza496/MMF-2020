@@ -33,11 +33,55 @@
                 Mathematically, each of these vectors is written in the form \( ce^{ti} \) where \( c \) is a complex number, and \(t\) is a variable for time. With this form, as time goes from \(0\) to \( 2\pi \) the vector will trace one complete circle.
             </p>
             <h3>
-                Why is this a vector?
+                Why is this a vector, and why does it rotate?
             </h3>
             <p>
-                Within the strictest technicalities, this isn't a vector, it is a complex number, but complex numbers can be represented as vectors when plotted on the complex plane. Since complex numbers are in the form \(Re + Im \cdot i \) they can be plotted on a graph with real and imaginary axis. 
+                Within the strictest technicalities, this isn't a vector, it is a complex number, but complex numbers can be represented as vectors when plotted on the complex plane. Since complex numbers are in the form \(Re + Im \cdot i \) they can be plotted on a graph with real and imaginary axis. The reason the vector will rotate as \(t\) increases is partly explained by why \( e^{i\pi} = -1 \).
             </p>
-        </div>
+            <div id="e^ipi">
+                <h3>Why \( e^{i\pi} = -1 \)</h3>
+                <p>
+                    Yes this is a true statement, but your calculator won't be able to actually arrive at this result if you type in \(e^{i\pi}\), so in an interest of saving your own time, don't try it, but if you are a rebel that doesn't listen to what a website has to say, do it and let me know how it went for you.
+                </p>
+                <p>
+                    The first piece of this explanation is to understand how you would evaluate \(e^{\pi}\). Starting off, \(e\) is defined by \( e = \lim_{n\to\infty}\left(1+\frac{1}{n}\right)^{n} \). In other words, \(e\) is the number you get when you make \(n\) unimaginably huge, and is roughly equal to \(2.718\).
+                </p>
+                <p>
+                    To evaluate \(e^{\pi}\), let's first substitude the definition of \(e\) instead of \(e\). I'm removing the limit because all it is saying is that in the eventual evaluation, \(n\) is going to be very very large.
+                </p>
+
+                $$e^{\pi} = \left(\left(1+\frac{1}{n}\right)^{n}\right)^{\pi} = \left(1+\frac{1}{n}\right)^{n\pi}$$
+
+                <p>
+                    We're next going to multiply the fraction \(\frac{1}{n}\) by \(\frac{\pi}{\pi}\).
+                </p>
+
+                $$e^{\pi} = \left(1+\frac{\pi}{n\pi}\right)^{n\pi}$$
+
+                <p>
+                    At this point, we're able to cheat a little bit. The equation as it is now will be raised to multiples of pi, but that's where we stumble because we don't know how. So to simpify things a little, we're going to replace \(n\pi\) with \(m\).
+                </p>
+                $$e^{\pi} = \left(1+\frac{\pi}{m}\right)^{m}$$
+                <p>
+                    Now I want to point something out, the end game here is that \(m\) and \(n\) will both go to infinity. That is the actual solution to the equation. We can't raise things to infinity, but we can raise them to very large numbers and wath the output to see where it is going as we use larger and larger powers. The nice thing about this though, is that we don't actually have to raise to multiples of pi because the actual solution takes no meaning from raising to pi or not. What this means is that numerically we can set \(m\) to integer values. If this is a struggle to understand, then think of us setting \(n\) to be equal to \( \frac{x}{\pi} \) where \(x\) is an integer, so that the exponent is equal to \(\frac{x\pi}{\pi} = x\)
+                </p>
+                <p>
+                    From here we can use whatever number we want for \(m\) and when given to a calculator, will return a value. This means we have a way to raise \(e\) to whatever we want, by replacing \(pi\) with whatever number we would like. Our goal is to calculate \(e^{i\pi}\) so lets build our equation for that.
+                </p>
+                $$e^{i\pi} = \left(1+i\frac{\pi}{m}\right)^{m}$$
+                <p>
+                    I want to point out that \( \left(1+i\frac{\pi}{m}\right)  \) is a complex number, and to actually perform this calculation, your calculator will need to work with complex numbers before you will see an answer.
+                </p>
+                <p>
+                    If your calculator can actually do this, go ahead and try it. When you input \( \left(1+i\frac{\pi}{m}\right)^{m} \) into a calculator that can use complex numbers, the result as \(m\) increases will approach \(\left(-1+0i\right) \)
+                </p>
+            </div> <!-- e^ipi -->
+            <div id="e^it">
+                <h3>How \(e^{i\pi}\) Helps Us</h3>
+                <p>
+                    At this point, I've shown how to calculate \(e^{i\pi}\) so what if we use some number other than \(\pi\)?
+                </p>
+            </div> <!-- e^it -->
+        </div> <!-- main -->
     </body>
 </html>
