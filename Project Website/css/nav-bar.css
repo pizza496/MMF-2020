@@ -29,3 +29,18 @@
     background-color: #4CAF50;
     color: white;
 }
+
+.topnav a.back {
+    padding: 2px 2px;
+    overflow: visible;
+    display: inline-block;
+}
+
+.topnav a.back:hover .backimg {
+    stroke: #000;
+}
+
+.backimg {
+    height: 40px;
+    stroke: #fff;
+}
