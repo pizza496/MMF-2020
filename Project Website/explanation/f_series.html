@@ -42,15 +42,33 @@
                 </p>
             </div> <!-- f_series -->
             <div id="f_trans">
-                <h3>Fourier Transform</h3>
+                <h3>Fourier Transform Background</h3>
                 <p>
-                    First: there are multiple types of Fourier Transforms, the basic Fourier Transform is defined by the equation:
+                    The reason a Fourier Transform will generate the coeficients is because a Fourier Transform will take a set of numbers and return the coeficients for the vectors in the Fourier Series of the function the Fourier Transform is being applied to. The Fourier Transform is defined by the equation:
                 </p>
                 $$\hat{f}\left(\xi\right) = \int_{-\infty}^{\infty} f\left(x\right)e^{-2\pi ix\xi}dx$$
                 <p>
-                     for any real number . This will take a function and decompose it into a set of periodic functions, similar to how a musical chord can be broken down into notes. In these animations the periodic functions we break the function down into are the rotating vectors. For my purposes, a continuous Fourier Transform isn’t that applicable because my sample size for the “function” isn’t infinite, so I will be using a Discrete Fourier Transform.
+                     for any real number \(\xi\). This will take a function and decompose it into a set of periodic functions, similar to how a musical chord can be broken down into notes. In these animations the periodic functions we break the function down into are the rotating vectors. For my purposes, a regular Fourier Transform isn’t  applicable because my sample size for the “function” isn’t infinite, so I will be using a Discrete Fourier Transform.
                  </p>
             </div> <!-- f_trans -->
+            <div id="dft">
+                <h3>Discrete Fourier Transform</h3>
+                <p>
+                    The Discrete Fourier Transform (DFT) does the same thing as the Fourier Transform but has discrete bounds based on a sample. The DFT is defined by the equation:
+                </p>
+                $$X_k = \sum\limits_{n=0}^{N-1}x_n\cdot e^{\frac{-i2\pi}{N}kn}$$
+                <p>
+                    Let's first apply a DFT manually as an example to understand a little more how it works before I go into how I'm using it.
+                </p>
+                <p>
+                    We're starting off with a set \(x\) such that:
+                </p>
+                $$x = \left(\begin{matrix}x_0\\x_1\\x_2\\x_3\end{matrix}\right)=\left(\begin{matrix}1\\2-i\\-i\\-1+2i\end{matrix}\right)$$
+                <p>
+                    In our example \(N=4\) because we have 4 samples.
+                </p>
+                $$ X_k = \sum_{n=0}^{4-1}x_n\cdot e^{\frac{-i2\pi}{4}kn} = \sum_{n=0}^{3}x_n\cdot e^{\frac{-i2\pi}{4}kn}$$
+            </div> <!-- dft -->
         </div> <!-- main -->
     </body>
 </html>
