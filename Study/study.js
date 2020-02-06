@@ -48,7 +48,7 @@ async function setup(){
     // (_, i) _ is taking place of the index, i is the value.
     // (_, i) => (1 + i >> 1) creates an array of numbers going 0, 1, 1, 2, 2, 3, 3, 4, 4
     // (i & 1 ? -1 : 1) will always return 1 or negative 1,
-    // i & 1 asks if i (in binary) and 1 (in binary) share any digits, returns thos as 1, result: if i is odd, will return 00000001, otherwise will return 0000
+    // i & 1 asks if i (in binary) and 1 (in binary) share any digits, returns those as 1, result: if i is odd, will return 00000001, otherwise will return 0000
     // ? -1 : 1 asks if the last operator returned 1 or 0, if 1, returns -1, if 1, returns 1
     DFT = Array.from(K, k => {
         let x = [0, 0];

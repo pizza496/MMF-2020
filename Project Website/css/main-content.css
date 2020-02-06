@@ -1,0 +1,25 @@
+body {
+    font-family: 'Exo 2';
+    margin: 0px;
+}
+
+h1 {
+    font-family: 'Comfortaa';
+    text-align: center;
+}
+
+h3 {
+    font-size: 18pt;
+}
+
+p {
+    font-size: 16pt;
+}
+
+a {
+    color: #000000
+}
+
+figure {
+    text-align: center;
+}
