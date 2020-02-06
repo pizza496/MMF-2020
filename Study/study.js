@@ -51,9 +51,19 @@ async function setup(){
     // i & 1 asks if i (in binary) and 1 (in binary) share any digits, returns those as 1, result: if i is odd, will return 00000001, otherwise will return 0000
     // ? -1 : 1 asks if the last operator returned 1 or 0, if 1, returns -1, if 1, returns 1
     DFT = Array.from(K, k => {
+        //make an array from K calling elements of new array by variable k which is equal to the value of each element of K
         let x = [0, 0];
+        // a variable x is equal to [0, 0]
         for (let i = 0, N = P.length; i < N; ++i) {
+            //  i starts equal to 0,
+            //  N is equal to the length of P (the array of points),
+            //  and i is always less than N
+            //  repeat what comes next incrementing the variable i by one each time. (i=0, i=1, i=2)
             x = add(x, mul(P[i], expim(k * i / N * 2 * -Math.PI)));
+            // order of operations: evaluate expim first, than evaluate mul, then evaluate add
+            // expim: returns [cos(input), sin(input)] for the imaginary number being entered.
+                // returns [cos(k * i / N * 2 * -pi)] PEMDAS applies
+            // mul: multiplies two imaginary numbers
         }
         return [x[0] / N, x[1] / N];
     })
