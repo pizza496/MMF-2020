@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Vector Explanation</title>
+        <link rel="stylesheet" href="../css/master.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="exhome.html" class="back">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112" class="backimg"><defs><style>.cls-1,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;}.cls-1{stroke-width:7px;}.cls-2{stroke-width:6px;}</style></defs><title>Back Icon</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="56" cy="56" r="52.5"/><polyline class="cls-2" points="55.5 93.5 18.5 56.5 55.5 19.5"/><line class="cls-2" x1="92.5" y1="56.5" x2="18.5" y2="56.5"/></g></g></svg>
+            </a>
+            <a href="../index.html">Home</a>
+            <a class="active" href="../explanation/exhome.html">Explaination</a>
+            <div class="dropdown">
+                <button class="dropbtn">Examples
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../examples/example1.html">Joseph Fourier</a>
+                    <a href="../examples/example2.html">Bentley Phoenix</a>
+                    <a href="../examples/example3.html">Aleph</a>
+                </div> <!-- dropdown-content-->
+            </div> <!-- dropdown -->
+        </div> <!-- top-nav -->
+        <div class="main">
+            <h1>Component Explanation: Vectors</h1>
+            <h3>What are these animations really?</h3>
+            <p>
+                Each of these animations is a set of rotating vectors which, as time progresses, will draw an image.
+            </p>
+            <h3>How do these vectors work?</h3>
+            <p>
+                Mathematically, each of these vectors is written in the form \( ce^{ti} \) where \( c \) is a complex number, and \(t\) is a variable for time. With this form, as time goes from \(0\) to \( 2\pi \) the vector will trace one complete circle.
+            </p>
+            <h3>
+                Why is this a vector, and why does it rotate?
+            </h3>
+            <p>
+                Within the strictest technicalities, this isn't a vector, it is a complex number, but complex numbers can be represented as vectors when plotted on the complex plane. Since complex numbers are in the form \(Re + Im \cdot i \) they can be plotted on a graph with real and imaginary axis. The reason the vector will rotate as \(t\) increases is partly explained by why \( e^{i\pi} = -1 \).
+            </p>
+            <div id="e^ipi">
+                <h3>Why \( e^{i\pi} = -1 \)</h3>
+                <p>
+                    Yes this is a true statement, but your calculator won't be able to actually arrive at this result if you type in \(e^{i\pi}\), so in an interest of saving your own time, don't try it, but if you are a rebel that doesn't listen to what a website has to say, do it and let me know how it went for you.
+                </p>
+                <p>
+                    The first piece of this explanation is to understand how you would evaluate \(e^{\pi}\). Starting off, \(e\) is defined by \( e = \lim_{n\to\infty}\left(1+\frac{1}{n}\right)^{n} \). In other words, \(e\) is the number you get when you make \(n\) unimaginably huge, and is roughly equal to \(2.718\).
+                </p>
+                <p>
+                    To evaluate \(e^{\pi}\), let's first substitude the definition of \(e\) instead of \(e\). I'm removing the limit because all it is saying is that in the eventual evaluation, \(n\) is going to be very very large.
+                </p>
+
+                $$e^{\pi} = \left(\left(1+\frac{1}{n}\right)^{n}\right)^{\pi} = \left(1+\frac{1}{n}\right)^{n\pi}$$
+
+                <p>
+                    We're next going to multiply the fraction \(\frac{1}{n}\) by \(\frac{\pi}{\pi}\).
+                </p>
+
+                $$e^{\pi} = \left(1+\frac{\pi}{n\pi}\right)^{n\pi}$$
+
+                <p>
+                    At this point, we're able to cheat a little bit. The equation as it is now will be raised to multiples of pi, but that's where we stumble because we don't know how. So to simpify things a little, we're going to replace \(n\pi\) with \(m\).
+                </p>
+                $$e^{\pi} = \left(1+\frac{\pi}{m}\right)^{m}$$
+                <p>
+                    Now I want to point something out, the end game here is that \(m\) and \(n\) will both go to infinity. That is the actual solution to the equation. We can't raise things to infinity, but we can raise them to very large numbers and wath the output to see where it is going as we use larger and larger powers. The nice thing about this though, is that we don't actually have to raise to multiples of pi because the actual solution takes no meaning from raising to pi or not. What this means is that numerically we can set \(m\) to integer values. If this is a struggle to understand, then think of us setting \(n\) to be equal to \( \frac{x}{\pi} \) where \(x\) is an integer, so that the exponent is equal to \(\frac{x\pi}{\pi} = x\)
+                </p>
+                <p>
+                    From here we can use whatever number we want for \(m\) and when given to a calculator, will return a value. This means we have a way to raise \(e\) to whatever we want, by replacing \(pi\) with whatever number we would like. Our goal is to calculate \(e^{i\pi}\) so lets build our equation for that.
+                </p>
+                $$e^{i\pi} = \left(1+i\frac{\pi}{m}\right)^{m}$$
+                <p>
+                    I want to point out that \( \left(1+i\frac{\pi}{m}\right)  \) is a complex number, and to actually perform this calculation, your calculator will need to work with complex numbers before you will see an answer.
+                </p>
+                <p>
+                    If your calculator can actually do this, go ahead and try it. When you input \( \left(1+i\frac{\pi}{m}\right)^{m} \) into a calculator that can use complex numbers, the result as \(m\) increases will approach \(\left(-1+0i\right) \)
+                </p>
+            </div> <!-- e^ipi -->
+            <div id="e^it">
+                <h3>How \(e^{i\pi}\) Helps Us</h3>
+                <p>
+                    At this point, I've shown how to calculate \(e^{i\pi}\) so what if we use some number other than \(\pi\)?
+                </p>
+                <p>
+                    We're going to generalize this function a little bit, we're going to replace \(\pi\) with an arbitrary variable: \(t\). Plotting outputs for different values of \(t\), outputs will begin to trace out a circle on the complex plane, where \(t\) is a number of radians ranging from \(0\) to \(2\pi\). If we set t to increase with time, the output of the function \(f\left(t\right)=e^{it}\) will go in a circle. This is the basis for the vectors I'm using in these animations. I've just defined them a little differently so that \(t\) ranges from \(0\) to \(1\) rather than \(0\) to \(2\pi\) by multiplying the exponent by \(2\pi\), leaving the definition for a single vector as \(e^{2\pi i t}\)
+                </p>
+            </div> <!-- e^it -->
+            <div id="final_touches">
+                <p>
+                    Multiplying these vectors by a complex number \(\left(c\right)\) will give the vector a specific starting angle and magnitude, so to I'm doing that as well: \( ce^{2\pi i t} \). Lastly, I need the vectors to be rotating at different frequencies, so the exponent is multiplied by an integer \(n\) that acts as the number of rotations as \(t\) ranges from \(0\) to \(1\): \( ce^{n2\pi i t} \).
+                </p>
+                <p>
+                    This is the mathematical definition for each of the vectors I use in the animations. The challenge is figuring out what the complex coeficient is to make sure all the vectors work together to create what I want.
+                </p>
+            </div> <!-- final_touches -->
+        </div> <!-- main -->
+    </body>
+</html>

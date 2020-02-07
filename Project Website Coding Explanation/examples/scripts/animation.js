@@ -1,5 +1,5 @@
 var setupDone = false;
-var follow = false;
+var follow = true;
 var DFT
 var K
 var t = 0;
