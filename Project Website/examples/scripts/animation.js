@@ -21,24 +21,12 @@ function mul([rea, ima], [reb, imb]) {
 let zoom;
 let speed;
 async function setup(){
-//    let svg = await fetch("https://gist.githubusercontent.com/mbostock/a4fd7a68925d4039c22996cc1d4862ce/raw/d813a42956d311d73fee336e1b5aac899c835883/fourier.svg")
-//        .then(response => response.text())
-//        .then(text => (new DOMParser).parseFromString(text, "image/svg+xml"))
-//        .then(svg => svg.documentElement);
     canvas = createCanvas(1080, 720);
     canvas.parent("sketch-holder")
     zoom = createSlider(10,50,50);
     zoom.parent("zoom")
     speed = createSlider(1,10,1);
     speed.parent("speed")
-//    viewbox = svg.viewBox.baseVal
-//    let path2 = svg.querySelector("path")
-//    l = path2.getTotalLength()
-//    P = Array.from({length: N}, (_, i) => {
-//        const {x, y} = path2.getPointAtLength(i / N * l);
-//        return [x - viewbox.width / 2, y - viewbox.height / 2];
-//    })
-//    console.log(P)
 
     K = Int16Array.from({length: M}, (_, i) => (1 + i >> 1) * (i & 1 ? -1 : 1))
     //K = Int16Array.from({length: M}, (_, i) => (1 + i >> 1) * (i & 1 ? -1 : 1))
@@ -64,8 +52,11 @@ async function setup(){
             // expim: returns [cos(input), sin(input)] for the imaginary number being entered.
                 // returns [cos(k * i / N * 2 * -pi)] PEMDAS applies
             // mul: multiplies two imaginary numbers
+            // add: adds two imaginary numbers, redefines x, acts as sigma notation for summations
+            // Imaginary numbers are represented by arrays of length 2 eg. [0,0]
         }
         return [x[0] / N, x[1] / N];
+        //returns the final value for each element the DFT array
     })
     setupDone = true
 }
@@ -89,16 +80,15 @@ function draw() {
         // Draw circles.
         noFill();
         stroke(75);
-        for (let i = 0, p = [0, 0]; i < M; ++i) {
+        for (let i = 0, p = [0, 0]; i < M; ++i) { // as i increases i=0, i=1, i=2, p starts at [0,0]
             const r = aabs(DFT[i]);
+            // aabs returns the magnitude of the vector based on the coeficient
             ellipse(p[0], p[1],r*2);
+            // draw a circle with radius r, centered at p
             p = add(p, mul(DFT[i], expim(a * K[i])));
+            //shift p based on the vector the circle is enclosing
         }
-        // Draw lines.
-        /*
-        context.beginPath();
-        context.moveTo(0, 0);
-        */
+        // Draw lines within the circles.
         stroke(125);
         for (let i = 0, p = [0, 0]; i < M; ++i) {
             prevP = p;
@@ -114,7 +104,7 @@ function draw() {
             vertex(...R[i]);
         }
         endShape();
-        t+=speed.value();
+        t+=speed.value(); //increase time
     }
 }
 
