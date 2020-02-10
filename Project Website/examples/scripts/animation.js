@@ -1,5 +1,5 @@
 var setupDone = false;
-var follow = false;
+var follow = true;
 var DFT
 var K
 var t = 0;
@@ -27,7 +27,7 @@ async function setup(){
 //        .then(svg => svg.documentElement);
     canvas = createCanvas(1080, 720);
     canvas.parent("sketch-holder")
-    zoom = createSlider(10,50,10);
+    zoom = createSlider(10,50,50);
     zoom.parent("zoom")
     speed = createSlider(1,10,1);
     speed.parent("speed")
