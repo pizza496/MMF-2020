@@ -29,17 +29,9 @@
             <h1>Component Explanation: Coding</h1>
             <h3>Process</h3>
             <p>
-                First I'm going to explain the process for how I go from SVG to animation. I start with an SVG file that contains a single path. I'm using SVGs because an SVG is based on mathematically defined curves. This means that I can easially translate from curve to a set of points which I do using a python program. Within the program I use a plugin called "svgpathtools" which gives syntax to interpret svg paths and return points on an x-y plane.
+                First I'm going to explain the process for how I go from SVG to animation. I start with an SVG file that contains a single path. I'm using SVGs because an SVG is based on mathematically defined curves.
             </p>
-            <pre class="line-numbers" data-src="coding_files/svg_translate.py" style="white-space:pre-wrap;"></pre>
-            <p>
-                The output is placed in a JavaScript file that is unique for each drawing. In that document, certain variables are defined that relate to the animations that are also unique to each drawing. Within these files the numbers are plain numbers but they symbolize the real and imaginary components of the points from the svg path.
-            </p>
-            <pre class="line-numbers" data-src="coding_files/example_template.js" style="white-space:pre-wrap;"></pre>
-            <p>
-                Lastly, the animation is created using the P5 JavaScript library and is coded in a separate file that will animate any set of points that it's given based on the unique JavaScript files defined above. Within the document are comments that explain what each piece does, some are in more depth than others,
-            </p>
-            <pre class="line-numbers" data-src="coding_files/animate.js" style="white-space:pre-wrap;"></pre>
+            <pre class="line-numbers" data-src="coding_files/animate.js"></pre>
         </div> <!-- main -->
     </body>
 </html>

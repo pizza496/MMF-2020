@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-pre {
-    max-height: 30em;
-}
-
 [class*="col-"] {
     float: left;
     padding: 15px;

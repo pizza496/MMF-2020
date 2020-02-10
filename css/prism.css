@@ -1,5 +1,5 @@
 /* PrismJS 1.19.0
-https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+python&plugins=line-numbers+file-highlight+show-language+normalize-whitespace+toolbar */
+https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript&plugins=line-numbers+file-highlight+show-language+normalize-whitespace+toolbar */
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -230,4 +230,3 @@ div.code-toolbar > .toolbar span:focus {
 	color: inherit;
 	text-decoration: none;
 }
-
