@@ -1,6 +1,6 @@
 from svgpathtools import *
 
-paths, attributes = svg2paths("Fourier.svg")
+paths, attributes = svg2paths("aleph.svg")
 
 num_samples = 5000
 
