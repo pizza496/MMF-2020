@@ -28,11 +28,11 @@
         <div class="main">
             <h1>Component Explanation: Coding</h1>
             <p>
-                This is where I'm going to explain the process for how I go from SVG to animation. I start with an SVG file that contains a single path. I'm using SVGs because an SVG is based on mathematically defined curves. This means that I can easially translate from curve to a set of points which I do using a python program. Within the program I use a plugin called "svgpathtools" which gives syntax to interpret svg paths and return points on an x-y plane.
+                This is where I'm going to explain how I go from SVG to animation. I start with an SVG file that contains a single path. I'm using SVGs because an SVG is based on mathematically defined curves. This means that I can easily translate from curve to a set of points. I do this using a python program. Within the program, I use a plugin called "svgpathtools" which gives syntax to interpret SVG paths and return points on an x-y plane.
             </p>
             <pre class="line-numbers" data-src="coding_files/svg_translate.py" style="white-space:pre-wrap;"></pre>
             <p>
-                The output is placed in a JavaScript file that is unique for each drawing. In that document, certain variables are defined that relate to the animations that are also unique to each drawing. Within these files the numbers are plain numbers but they symbolize the real and imaginary components of the points from the svg path.
+                The output is placed in a JavaScript file that is unique for each drawing. In that document, certain variables are defined that relate to the animations that are also unique to each drawing. Within these files, the numbers are normal, but they symbolize the real and imaginary components of the points that I got from the SVG path.
             </p>
             <pre class="line-numbers" data-src="coding_files/example_template.js" style="white-space:pre-wrap;"></pre>
             <p>
